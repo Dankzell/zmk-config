@@ -1,0 +1,6 @@
+if SHIELD_TINY
+
+config ZMK_KEYBOARD_NAME
+    default "tiny"
+
+endif # SHIELD_TINY
