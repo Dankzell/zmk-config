@@ -36,7 +36,65 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT LSHIFT>, <&caps_word>, <&kp N3>;
+            bindings = <&sk LSHIFT>, <&caps_word>, <&kp N3>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+
+        combo_l_paren {
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+        combo_r_paren {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp RPAR>;
+            layers = <0>;
+        };
+        combo_l_bracket {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+        };
+        combo_r_bracket {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp RBKT>;
+            layers = <0>;
+        };
+        combo_l_brace {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };
+        combo_r_brace {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+        };
+        combo_eq {
+            timeout-ms = <50>;
+            key-positions = <15 27>;
+            bindings = <&kp EQUAL>;
+            layers = <0>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <14 26>;
+            bindings = <&kp MINUS>;
+            layers = <0>;
+        };
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <16 28>;
+            bindings = <&kp UNDER>;
+            layers = <0>;
         };
     };
 
