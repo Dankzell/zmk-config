@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "tiny-layouts.dtsi"
+#include "tiny-micro-layouts.dtsi"
 
 / {
     chosen {
