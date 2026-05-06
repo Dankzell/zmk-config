@@ -103,13 +103,11 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ` 1 2 3 4 5 6 7 8 9 0 DEL
             // TAB Q W E R T Y U I O P '
             // ESC A S(alt) D(ctrl) F(shift) G H J(shift) K(ctrl) L(alt) ; BSPC
             // SHIFT Z X C V B N M , . / SHIFT
             // GUI _ ALT CTRL SYMB ENT NUM/SPC NAV/ESC RCTRL RALT _ RGUI
             bindings = <
-                /* &kp GRAVE  &kp N1        &kp N2      &kp N3       &kp N4       &kp N5   &kp N6        &kp N7       &kp N8       &kp N9      &kp N0         &kp DEL */
                 &kp TAB    &kp Q         &kp W       &kp E        &kp R        &kp T    &kp Y         &kp U        &kp I        &kp O       &kp P          &kp SQT
                 &kp ESC    &hml LGUI A   &hml LALT S &hml LCTRL D &hml LSHFT F &kp G    &kp H         &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp BSPC
                 &td0       &kp Z         &kp X       &kp C        &kp V        &kp B    &kp N         &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp RSHFT
@@ -118,9 +116,8 @@
         };
 
         symb_layer {
-            // F1-F12 on top row, symbols on rows 2-4
+            // symbols on rows 1-3
             bindings = <
-                /* &kp F1    &kp F2    &kp F3    &kp F4     &kp F5    &kp F6   &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12 */
                 &kp GRAVE &kp N1    &kp N2    &kp LT     &kp GT    &kp LBKT &kp RBKT  &kp AMPS  &kp PIPE  &kp GRAVE &trans    &trans
                 &trans    &kp EXCL  &kp EQUAL &kp MINUS  &kp LPAR  &kp LBRC &kp RBRC  &kp RPAR  &kp DOT   &kp HASH  &kp AT    &trans
                 &trans    &kp PRCNT &kp DLLR  &kp PLUS   &kp UNDER &none    &kp ASTRK &kp CARET &kp SEMI  &kp COLON &kp BSLH  &trans
@@ -142,7 +139,6 @@
         num_layer {
             // Numpad right half; BT left half: ` = clear, 1/2/3/5 = profiles 0-3, A = next, D = prev
             bindings = <
-                /* &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &trans        &trans    &trans    &trans    &trans           &kp KP_NUM */
                 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_SLASH    &kp DEL
                 &trans     &bt BT_NXT    &trans        &bt BT_PRV    &trans     &trans        &kp KP_PLUS   &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp BSPC
                 &trans     &trans        &trans        &trans        &trans     &trans        &kp KP_N0     &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT      &kp KP_ENTER
@@ -153,7 +149,6 @@
         game_layer {
             // Gaming: no home row mods and change around the layout to work for lefthandend freaks sucha as myself
             bindings = <
-                /* &trans    &trans    &trans      &trans       &trans       &trans  &trans        &trans       &trans     &trans        &trans       &trans */
                 &kp ESC   &kp Q     &kp W       &kp E        &kp R        &kp T   &kp LC(DEL)   &kp LC(LEFT) &none      &kp LC(RIGHT) &kp LC(BSPC) &none
                 &kp TAB   &kp A     &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G   &kp LEFT      &kp DOWN     &kp UP     &kp RIGHT     &kp HOME     &trans
                 &kp LSHFT &kp Z     &kp X       &kp C        &kp V        &kp B   &none         &kp PG_DN    &kp PG_UP  &none         &kp END      &trans
