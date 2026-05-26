@@ -24,7 +24,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <175>;
+            require-prior-idle-ms = <125>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
@@ -99,6 +99,14 @@
     };
 
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        func_layer_toggle {
+            if-layers = <1 3>;
+            then-layer = <5>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -108,8 +116,8 @@
             // SHIFT Z X C V B N M , . / SHIFT
             // GUI _ ALT CTRL SYMB ENT NUM/SPC NAV/ESC RCTRL RALT _ RGUI
             bindings = <
-                &kp TAB    &kp Q         &kp W       &kp E        &kp R        &kp T    &kp Y         &kp U        &kp I        &kp O       &kp P          &kp SQT
-                &kp ESC    &hml LGUI A   &hml LALT S &hml LCTRL D &hml LSHFT F &kp G    &kp H         &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp BSPC
+                &kp GRAVE    &kp Q         &kp W       &kp E        &kp R        &kp T    &kp Y         &kp U        &kp I        &kp O       &kp P          &kp SQT
+                &kp TAB    &hml LGUI A   &hml LALT S &hml LCTRL D &hml LSHFT F &kp G    &kp H         &hmr RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp BSPC
                 &td0       &kp Z         &kp X       &kp C        &kp V        &kp B    &kp N         &kp M        &kp COMMA    &kp DOT     &kp FSLH       &kp RSHFT
                 &none   &kp LGUI  &kp LALT    &kp LCTRL    &mo 1        &kp RET  &lt 3 SPACE   &lt 2 ESC    &kp RCTRL    &kp RALT    &kp RGUI       &none
             >;
@@ -128,8 +136,7 @@
         nav_layer {
             // Navigation: arrows, word jump, page up/down
             bindings = <
-                /* &trans    &trans    &trans      &trans       &trans       &trans   &trans        &trans       &trans     &trans        &trans       &trans */
-                &kp ESC   &kp Q     &kp W       &kp E        &kp R        &kp T    &kp LC(DEL)   &kp LC(LEFT) &none      &kp LC(RIGHT) &kp LC(BSPC) &none
+                &kp ESC   &kp Q     &kp W       &kp E        &kp R        &kp T    &kp LC(DEL)   &kp LC(LEFT) &none      &kp LC(RIGHT) &kp LC(BSPC) &kp DEL
                 &kp TAB   &kp A     &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G    &kp LEFT      &kp DOWN     &kp UP     &kp RIGHT     &kp HOME     &trans
                 &trans    &kp Z     &kp X       &kp C        &kp V        &kp CAPS &none         &kp PG_DN    &kp PG_UP  &none         &kp END      &trans
                 &none     &kp LCTRL &mo 1       &kp RET      &kp LGUI     &none    &kp SPACE     &trans       &kp RCTRL  &kp RALT      &none        &none
@@ -153,6 +160,16 @@
                 &kp TAB   &kp A     &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G   &kp LEFT      &kp DOWN     &kp UP     &kp RIGHT     &kp HOME     &trans
                 &kp LSHFT &kp Z     &kp X       &kp C        &kp V        &kp B   &none         &kp PG_DN    &kp PG_UP  &none         &kp END      &trans
                 &none     &kp LCTRL &mo 1       &kp RET      &kp LGUI     &none   &kp SPACE     &trans       &kp RCTRL  &kp RALT      &none        &none
+            >;
+        };
+
+        func_layer {
+            // F1-F12 across top row; activated by holding symb (mo 1) + num (lt 3) together
+            bindings = <
+                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
             >;
         };
     };
