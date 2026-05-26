@@ -1,6 +1,6 @@
-if SHIELD_TINY
+if SHIELD_TINY && !SHIELD_TINY_MICRO
 
 config ZMK_KEYBOARD_NAME
     default "tiny"
 
-endif # SHIELD_TINY
+endif # SHIELD_TINY && !SHIELD_TINY_MICRO
