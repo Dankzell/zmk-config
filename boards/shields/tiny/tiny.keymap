@@ -96,6 +96,12 @@
             bindings = <&kp UNDER>;
             layers = <0>;
         };
+        combo_game_toggle {
+            timeout-ms = <50>;
+            key-positions = <12 24>;
+            bindings = <&tog 4>;
+            layers = <0 4>;
+        };
     };
 
 
@@ -145,19 +151,19 @@
                 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_SEL 4 &trans        &trans    &trans    &trans    &trans           &kp KP_NUM
                 &trans     &trans        &trans        &trans        &trans     &trans        &kp KP_MINUS  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_SLASH    &kp DEL
                 &trans     &bt BT_NXT    &trans        &bt BT_PRV    &trans     &trans        &kp KP_PLUS   &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &kp BSPC
-                &trans     &trans        &trans        &trans        &trans     &trans        &kp KP_N0     &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT      &kp KP_ENTER
+                &sys_reset &bootloader   &trans        &trans        &trans     &trans        &kp KP_N0     &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT      &kp KP_ENTER
                 &trans     &trans        &trans        &trans        &trans     &trans        &trans        &trans    &trans    &trans    &trans          &trans
             >;
         };
 
         game_layer {
-            // Gaming: no home row mods and change around the layout to work for lefthandend freaks sucha as myself
+            // Toggle with TAB+ESC; WASD→IJKL, top-right→ESC, H→TAB, no home row mods
             bindings = <
-                &trans    &trans    &trans      &trans       &trans       &trans  &trans        &trans       &trans     &trans        &trans       &trans
-                &kp ESC   &kp Q     &kp W       &kp E        &kp R        &kp T   &kp LC(DEL)   &kp LC(LEFT) &none      &kp LC(RIGHT) &kp LC(BSPC) &none
-                &kp TAB   &kp A     &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G   &kp LEFT      &kp DOWN     &kp UP     &kp RIGHT     &kp HOME     &trans
-                &kp LSHFT &kp Z     &kp X       &kp C        &kp V        &kp B   &none         &kp PG_DN    &kp PG_UP  &none         &kp END      &trans
-                &none     &kp LCTRL &mo 1       &kp RET      &kp LGUI     &none   &kp SPACE     &trans       &kp RCTRL  &kp RALT      &none        &none
+                &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5   &kp N6       &kp N7    &kp N8    &kp N9    &kp N0    &kp ESC
+                &kp TAB    &kp Q     &kp I     &kp E     &kp R     &kp T    &kp Y        &kp U     &kp I     &kp O     &kp P     &kp SQT
+                &kp ESC    &kp J     &kp K     &kp L     &kp F     &kp G    &kp TAB      &kp J     &kp K     &kp L     &kp SEMI  &kp BSPC
+                &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B    &kp N        &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                &none      &kp LGUI  &kp LALT  &kp LCTRL &mo 1     &kp RET  &lt 3 SPACE  &lt 2 ESC &kp RCTRL &kp RALT  &kp RGUI  &none
             >;
         };
     };
