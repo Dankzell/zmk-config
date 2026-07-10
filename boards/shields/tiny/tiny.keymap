@@ -96,11 +96,17 @@
             bindings = <&kp UNDER>;
             layers = <0>;
         };
-        combo_game_toggle {
+        combo_quest {
             timeout-ms = <50>;
-            key-positions = <12 24>;
-            bindings = <&tog 4>;
-            layers = <0 4>;
+            key-positions = <19 20>;
+            bindings = <&kp LS(FSLH)>;
+            layers = <0>;
+        };
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp PLUS>;
+            layers = <0>;
         };
     };
 
